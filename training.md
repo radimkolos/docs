@@ -169,9 +169,9 @@ pip install -r requirements.txt
 3. *File->Export to dataset*, zvolit umístění a exportovat. Export zabere nějaký čas a aplikace při něm rádoby zamrzne. Postup exportu lze vidět pouze při spuštění v terminálu nebo nahlédnutím do složek datasetu. Po dokončení se zobrazí zpráva o úspěšnosti operace.
 
 4. Na zvoleném umístění najdete složku `/dataset` obsahující obrázky a anotace ve formátu YOLO.
-  * Snímky s nastaveným "Is testing->true" jsou vždy v `/test` množině a slouží pro finální ohodnocení modelu.
-  * Ostatní snímky "Is Testing->false" jsou náhodně rozděleny do `/train` a `/val` množin v předem daném poměru (15 %) a slouží pro trénování a úpravu hyperparametrů trénování modelu.
-  * Soubor *files_mapping.txt* obsahuje mapování vygenrovaným názvů souborů na názvy originální (pro případ potřeby dohledání originálního snímku v databázi).
+  4.1 Snímky s nastaveným "Is testing->true" jsou vždy v `/test` množině a slouží pro finální ohodnocení modelu.
+  4.2 Ostatní snímky "Is Testing->false" jsou náhodně rozděleny do `/train` a `/val` množin v předem daném poměru (15 %) a slouží pro trénování a úpravu hyperparametrů trénování modelu.
+  4.3 Soubor *files_mapping.txt* obsahuje mapování vygenrovaným názvů souborů na názvy originální (pro případ potřeby dohledání originálního snímku v databázi).
 
 5. Export v této chvíli *nedokáže zohlednit žádné další nastavené vlastnosti objektů* (např. stavy návěstidel apod.), jelikož není zřejmé jak by s němi měl naložit. To je proto ponecháno k rozřešení dalším generacím.
 
