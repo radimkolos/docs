@@ -16,6 +16,10 @@ V tomto dokumentu se budu zabývat tím, jak natrénovat model Yolo V5 pro detek
     * [Hierarchie složek](#hierarchie-složek)
   * [Trénování](#trénování)
     * [Výběr modelu](#výběr-modelu)
+    * [Příprava Yolo v5](#příprava-yolo-v5)
+    * [Export datasetu z anotačního SW](#export-datasetu-z-anotačního-sw)
+    * [Úprava cest datasetu](#úprava-cest-datasetu)
+    * [Trénování modelu](#trénování-modelu)
 <!--te-->
 
 ## Základní pojmy
@@ -158,21 +162,41 @@ pip install -r requirements.txt
 
 ### Export datasetu z anotačního SW
 
-* V Annotation SW si vyfiltrovat požadovaná data zvolením správného *Annotation type*. Pozor, cokoli odfiltruji, nemusí být ve výsledném datasetu, například pokud si vyfiltruji pouze testovací data, nebude v datasetu trénovací množina.
+1. V Annotation SW si vyfiltrovat požadovaná data zvolením správného *Annotation type*. Pozor, cokoli odfiltruji, nemusí být ve výsledném datasetu, například pokud si vyfiltruji pouze testovací data, nebude v datasetu trénovací množina.
 
-* V liště ASW: *File->Settings* nastavit export configuration, především *rozlišení exportovaných snímků*. Delší strana, kratší se dopočítá automaticky podle aspect ratio.
+2. V liště ASW: *File->Settings* nastavit export configuration, především *rozlišení exportovaných snímků*. Delší strana, kratší se dopočítá automaticky podle aspect ratio.
 
-* *File->Export to dataset*, zvolit umístění a exportovat. Export zabere nějaký čas a aplikace při něm rádoby zamrzne. Postup exportu lze vidět pouze při spuštění v terminálu nebo nahlédnutím do složek datasetu. Po dokončení se zobrazí zpráva o úspěšnosti operace.
+3. *File->Export to dataset*, zvolit umístění a exportovat. Export zabere nějaký čas a aplikace při něm rádoby zamrzne. Postup exportu lze vidět pouze při spuštění v terminálu nebo nahlédnutím do složek datasetu. Po dokončení se zobrazí zpráva o úspěšnosti operace.
 
-* Na zvoleném umístění najdete složku `/dataset` obsahující obrázky a anotace ve formátu YOLO.
+4. Na zvoleném umístění najdete složku `/dataset` obsahující obrázky a anotace ve formátu YOLO.
   * Snímky s nastaveným "Is testing->true" jsou vždy v `/test` množině a slouží pro finální ohodnocení modelu.
   * Ostatní snímky "Is Testing->false" jsou náhodně rozděleny do `/train` a `/val` množin v předem daném poměru (15 %) a slouží pro trénování a úpravu hyperparametrů trénování modelu.
   * Soubor *files_mapping.txt* obsahuje mapování vygenrovaným názvů souborů na názvy originální (pro případ potřeby dohledání originálního snímku v databázi).
 
-* Export v této chvíli *nedokáže zohlednit žádné další nastavené vlastnosti objektů* (např. stavy návěstidel apod.), jelikož není zřejmé jak by s němi měl naložit. To je proto ponecháno k rozřešení dalším generacím.
+5. Export v této chvíli *nedokáže zohlednit žádné další nastavené vlastnosti objektů* (např. stavy návěstidel apod.), jelikož není zřejmé jak by s němi měl naložit. To je proto ponecháno k rozřešení dalším generacím.
 
-### Uprava cest datasetu
+### Úprava cest datasetu
 
-* `dataset_#.yaml` prejmenovat podle obsahu a umistit do slozky `/yolov5/data/dataset_#.yaml`
-* Zbytek umístit do složky do složky `/yolov5/../Datasets/dataset_#`
-* V `dataset.yaml` upravit cestu `path` k datum na `../Datasets/dataset_#`
+* `dataset_#.yaml` přejmenovat podle potřeb a umístit do složky `/yolov5/data/dataset_#.yaml`
+* Zbytek umístit do složky `/yolov5/../Datasets/dataset_#`
+* V `dataset.yaml` upravit cestu `path` k datům na `../Datasets/dataset_#`
+
+### Trénování modelu
+
+Jak jsem již psal buď se dá dotrénovat kterýkoliv z modelů Yolov5 nebo náhodně inicializovat svůj vlastní model, což ale není doporučeno. 
+
+Předtrénované váhy se automaticky stahují z nejnovější verze YOLOv5.
+
+Příkaz k natrénování sítě:
+
+```bash
+$ python train.py --img `#` --batch `#` --epochs `#` --data `#` --weights `#`
+```
+
+* `--img` je rozlišení vstupních obrázků (např 640 nebo 1280)
+* `--batch` je počet snímků v jedné trénovací sadě (nastvit co nejvíce podle paměti karty např. 8, 16)
+* `--epochs` je počet iterací trénovacího algoritmu (např. 100)
+
+Výsledný natrénovaný model/y dohledáte v naklnovaném repozitáři v adresáři `yolov5/runs/train/expX/weight/`. 
+
+Adresář bude obsahovat dvě natrénované sítě a to tu nejlepší natrénovanou `best.pt` a poslední `last.pt` z poslední epochy.
