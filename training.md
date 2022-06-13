@@ -3,9 +3,9 @@
 ## TOC
 
 <!--ts-->
-   * [Základní pojmy](#ZakladniPojmy)
-   * [Export datasetu](#ExportDatasetu)
- !--te-->
+   * [Základní pojmy](#základní-pojmy)
+   * [Export datasetu](#export-datasetu)
+<!--te-->
 
 ## Základní pojmy
 
