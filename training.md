@@ -197,6 +197,7 @@ $ python train.py --img `#` --batch `#` --epochs `#` --data `#` --weights `#`
 * `--img` je rozlišení vstupních obrázků (např 640 nebo 1280)
 * `--batch` je počet snímků v jedné trénovací sadě (nastvit co nejvíce podle paměti karty např. 8, 16)
 * `--epochs` je počet iterací trénovacího algoritmu (např. 100)
+* `--weights` předtrénovaný model (např. yolov5s.pt) nebo techat tento argument prázdný pro náhodnou inicializaci
 
 Výsledný natrénovaný model/y dohledáte v naklnovaném repozitáři v adresáři `yolov5/runs/train/expX/weight/`. 
 
