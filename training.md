@@ -134,6 +134,28 @@ Datasets
     │        │   ...
 ```
 
+## Trénování
+
+V této kapitole by mělo být popsané vše dostatečné k úspěšnému dotrénování kterékoliv z Yolo v5 sití. Více informací pod [tímto](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data) odkazem.
+
+### Výběr modelu
+
+Vyberte předtrénovaný model, na jehož základě začnete trénovat. Je lepší vybrat síť, která je již předtrénovaná na něčem jiném, než trénovat svoji vlastní síť úplně od začátku. Yolo v5 nabízí tyto předtrénované sítě, jejichž srovnání se dá dohledat [zde](https://github.com/ultralytics/yolov5#pretrained-checkpoints).
+
+![porování sítí](model_comparison.png "Porování Sítí")
+
+
+### Příprava Yolo v5
+
+Naklonujte si repozitář Yolo v5 a nainstalujte python závislosti. V oficiální dokumentaci je napsané, že je potřeba Python>=3.7.0, nicméně může se stát, že poslední verze nebude kompatibilní s nejnovější verzí PyTorch. Doporučuju tedy stáhnout verzi 3.7 a nebát se experimentovat s verzemi, pokud se nebude cokoliv dařit.
+
+```
+yay -S python37
+git clone https://github.com/ultralytics/yolov5
+cd yolov5
+pip install -r requirements.txt
+```
+
 ### Export datasetu z anotačního SW
 
 * V Annotation SW si vyfiltrovat požadovaná data zvolením správného *Annotation type*. Pozor, cokoli odfiltruji, nemusí být ve výsledném datasetu, například pokud si vyfiltruji pouze testovací data, nebude v datasetu trénovací množina.
@@ -149,10 +171,8 @@ Datasets
 
 * Export v této chvíli *nedokáže zohlednit žádné další nastavené vlastnosti objektů* (např. stavy návěstidel apod.), jelikož není zřejmé jak by s němi měl naložit. To je proto ponecháno k rozřešení dalším generacím.
 
-## Trénování
+### Uprava cest datasetu
 
-### Výběr modelu
-
-Vyberte předtrénovaný model, na jehož základě začnete trénovat. Je lepší vybrat síť, která je již předtrénovaná na něčem jiném, než trénovat svoji vlastní síť úplně od začátku. Yolo v5 nabízí tyto předtrénované sítě, jejichž srovnání se dá dohledat [zde](https://github.com/ultralytics/yolov5#pretrained-checkpoints).
-
-![porování sítí](model_comparison.png "Porování Sítí")
+* `dataset_#.yaml` prejmenovat podle obsahu a umistit do slozky `/yolov5/data/dataset_#.yaml`
+* Zbytek umístit do složky do složky `/yolov5/../Datasets/dataset_#`
+* V `dataset.yaml` upravit cestu `path` k datum na `../Datasets/dataset_#`
