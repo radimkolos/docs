@@ -10,7 +10,8 @@ V tomto dokumentu se budu zabývat tím, jak trénovat model Yolo V5 pro detekci
   * [Základní pojmy](#základní-pojmy)
     * [Yolo v5](#yolo-v5)
     * [COCO Dataset](#coco-dataset)
-  * [Export datasetu](#export-datasetu)
+  * [Tvorba datasetu](#tvorba-datasetu)
+    * [Hierarchie složek](#hierarchie-složek)
 <!--te-->
 
 ## Základní pojmy
@@ -33,7 +34,12 @@ Common Objects in Context (COCO) doslova znamená, že snímky v datovém soubor
 
 COCO poskytuje označování více objektů, anotace segmentačních masek, popisky obrázků, detekci klíčových bodů a panoptické segmentační anotace s celkem 81 kategoriemi, což z něj činí velmi univerzální a víceúčelovou datovou sadu.
 
-Nás ovšem nebudou až tak zajímat tato volně stažitelná [sada dat](https://cocodataset.org/#download). To hlavní čemu je potřeba věnovat pozornost je především hierarchie složek popsané níže.
+Nás ovšem nebudou až tak zajímat tato volně stažitelná [sada dat](https://cocodataset.org/#download). To hlavní čemu je potřeba věnovat pozornost je především hierarchie složek popsané v kapitole [Tvorba datasetu](#tvorba-datasetu).
+
+## Tvorba datasetu
+
+### Hierarchie složek
+
 
 ```
 Project Folder
@@ -65,13 +71,3 @@ Project Folder
     │        │ 00000002128.txt
     │        │   ...
 ```
-## Export datasetu
-
-* V Annotation SW si vyfiltrovat požadovaná data.
-
-    * Především zvolit správný Annotation type, to jsou třídy, které chci mít v datasetu, například HUMN.
-    * Pozor, cokoli odfiltruji, nemusí být ve výsledném datasetu. Například pokud si vyfiltruji pouze testovací data, nebude v datasetu trénovací množina).
-
-
-
-
