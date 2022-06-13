@@ -55,10 +55,10 @@ Tento soubor, jehož obsah je níže, je konfigurační soubor datasetu, který 
 ```yaml
 # Dataset in YoloV5 format created by AZD Annotation software ©
 
-path: ../dataset/         # dataset root dir
-train: images/train       # train images
-val: images/val           # validation images
-test: images/test         # test images
+path: ../datasets/dataset_1 # dataset root dir
+train: images/train         # train images
+val: images/val             # validation images
+test: images/test           # test images
 
 nc: 2
 names: [ 'HUMN', 'SIGN' ] # classes names
@@ -67,7 +67,7 @@ names: [ 'HUMN', 'SIGN' ] # classes names
 
 ### Anotovaná data
 
-Ke každému z obrázků v sadě dat pařtří jeden soubor `*.txt` obsahující anotace.
+Ke každému z obrázků v sadě dat patří jeden soubor `*.txt` obsahující anotace.
 
 Specifikace jsou následující:
 
@@ -87,6 +87,15 @@ Například takto:
 ```
 
 ### Hierarchie složek
+
+YOLOv5 předpokládá, že adresář `/dataset_1` je uvnitř adresáře `/datasets` vedle adresáře (naklonovaný repozitář) `/yolov5`. YOLOv5 automaticky vyhledá anotace (labels) pro každý obrázek nahrazením posledního výskytu `/images/` v cestě k jednotlivým obrázkům za `/labels/`. Například:
+
+```
+../datasets/coco128/images/im0.jpg  # image
+../datasets/coco128/labels/im0.txt  # label
+```
+
+Obrázky `*.jpg` a anotace `*.txt` by měly být uspořádány do složek naśledujím způsobem níže.
 
 
 ```
