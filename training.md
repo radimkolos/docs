@@ -28,7 +28,7 @@ V tomto dokumentu se budu zabývat tím, jak natrénovat model Yolo V5 pro detek
 
 ### [Yolo v5](https://github.com/ultralytics/yolov5)
 
-Je množina předtrénvaných modelů na [datasetech coco](#coco-dataset).
+Je množina předtrénvaných modelů na datasetech [COCO](#coco-dataset).
 
 YOLO, což je zkratka pro "You only look once", je algoritmus pro detekci objektů, který rozděluje obrázky do mřížkového systému. Každá buňka v mřížce je zodpovědná za detekci objektů uvnitř sebe.
 
