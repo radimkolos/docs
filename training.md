@@ -35,23 +35,24 @@ COCO poskytuje označování více objektů, anotace segmentačních masek, popi
 
 Nás ovšem nebudou až tak zajímat tato volně stažitelná [sada dat](https://cocodataset.org/#download). To hlavní čemu je potřeba věnovat pozornost je především hierarchie složek této datové sady popsané níže.
 
-  Project Folder
-  └───the code notebook (.py / .ipynb)
-  │
-  └───COCOdataset2017   
-      └───images
-      │   └───train
-      │   │    │   000000000009.jpg
-      │   │    │   000000000025.jpg
-      │   │    │   ...
-      │   └───val   
-      │        │   000000000139.jpg
-      │        │   000000000285.jpg
-      │        │   ...
-      └───annotations
-          │   instances_train.json
-          │   instances_val.json
-
+```
+Project Folder
+└───the code notebook (.py / .ipynb)
+│
+└───COCOdataset2017   
+    └───images
+    │   └───train
+    │   │    │   000000000009.jpg
+    │   │    │   000000000025.jpg
+    │   │    │   ...
+    │   └───val   
+    │        │   000000000139.jpg
+    │        │   000000000285.jpg
+    │        │   ...
+    └───annotations
+        │   instances_train.json
+        │   instances_val.json
+```
 ## Export datasetu
 
 * V Annotation SW si vyfiltrovat požadovaná data.
