@@ -14,7 +14,8 @@ V tomto dokumentu se budu zabývat tím, jak natrénovat model Yolo V5 pro detek
     * [Dataset.yaml](#datasetyaml)
     * [Anotovaná data (labels)](#anotovaná-data-labels)
     * [Hierarchie složek](#hierarchie-složek)
-  * [Výběr modelu](#výběr-modelu)
+  * [Trénování](#trénování)
+    * [Výběr modelu](#výběr-modelu)
 <!--te-->
 
 ## Základní pojmy
@@ -52,7 +53,9 @@ V následující sub kapitolách se dozvíte, jak vypadá hierarchie složek, co
 Tento soubor, jehož obsah je níže, je konfigurační soubor datasetu, který definuje:
 
   1. Cestu ke kořenovému adresáři datasetu a relativní cesty `path` k adresářům s obrázky `train` / `val` / `test` (nebo soubory *.txt s cestami k obrázkům)
+
   2. Počet tříd `nc`
+  
   3. Seznam názvů tříd `names`
 
 ```yaml
@@ -101,8 +104,8 @@ YOLOv5 předpokládá, že adresář `/dataset_1` je uvnitř adresáře `/datase
 Obrázky `*.jpg` a anotace `*.txt` by měly být uspořádány do složek naśledujím způsobem.
 
 ```
-Project Folder
-└───Dataset
+Datasets
+└───Dataset_#
     └───images
     │   └───test
     │   │    │ 000000000009.jpg
@@ -131,10 +134,25 @@ Project Folder
     │        │   ...
 ```
 
-## Výběr modelu
+### Export datasetu z anotačního SW
+
+* V Annotation SW si vyfiltrovat požadovaná data zvolením správného *Annotation type*. Pozor, cokoli odfiltruji, nemusí být ve výsledném datasetu, například pokud si vyfiltruji pouze testovací data, nebude v datasetu trénovací množina.
+
+* V liště ASW: *File->Settings* nastavit export configuration, především *rozlišení exportovaných snímků*. Delší strana, kratší se dopočítá automaticky podle aspect ratio.
+
+* *File->Export to dataset*, zvolit umístění a exportovat. Export zabere nějaký čas a aplikace při něm rádoby zamrzne. Postup exportu lze vidět pouze při spuštění v terminálu nebo nahlédnutím do složek datasetu. Po dokončení se zobrazí zpráva o úspěšnosti operace.
+
+* Na zvoleném umístění najdete složku `/dataset` obsahující obrázky a anotace ve formátu YOLO.
+  * Snímky s nastaveným "Is testing->true" jsou vždy v `/test` množině a slouží pro finální ohodnocení modelu.
+  * Ostatní snímky "Is Testing->false" jsou náhodně rozděleny do `/train` a `/val` množin v předem daném poměru (15 %) a slouží pro trénování a úpravu hyperparametrů trénování modelu.
+  * Soubor *files_mapping.txt* obsahuje mapování vygenrovaným názvů souborů na názvy originální (pro případ potřeby dohledání originálního snímku v databázi).
+
+* Export v této chvíli *nedokáže zohlednit žádné další nastavené vlastnosti objektů* (např. stavy návěstidel apod.), jelikož není zřejmé jak by s němi měl naložit. To je proto ponecháno k rozřešení dalším generacím.
+
+## Trénování
+
+### Výběr modelu
 
 Vyberte předtrénovaný model, na jehož základě začnete trénovat. Je lepší vybrat síť, která je již předtrénovaná na něčem jiném, než trénovat svoji vlastní síť úplně od začátku. Yolo v5 nabízí tyto předtrénované sítě, jejichž srovnání se dá dohledat [zde](https://github.com/ultralytics/yolov5#pretrained-checkpoints).
 
 ![porování sítí](model_comparison.png "Porování Sítí")
-
-
