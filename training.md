@@ -37,21 +37,33 @@ Nás ovšem nebudou až tak zajímat tato volně stažitelná [sada dat](https:/
 
 ```
 Project Folder
-└───the code notebook (.py / .ipynb)
-│
-└───COCOdataset2017   
+└───Dataset
     └───images
-    │   └───train
-    │   │    │   000000000009.jpg
-    │   │    │   000000000025.jpg
+    │   └───test
+    │   │    │ 000000000009.jpg
+    │   │    │ 000000000025.jpg
+    │   │    │   ...
+    │   └───train   
+    │   │    │ 000000000139.jpg
+    │   │    │ 000000000285.jpg
     │   │    │   ...
     │   └───val   
-    │        │   000000000139.jpg
-    │        │   000000000285.jpg
+    │        │ 00000000003.jpg
+    │        │ 00000002128.jpg
     │        │   ...
-    └───annotations
-        │   instances_train.json
-        │   instances_val.json
+    └───labels
+    │   └───test
+    │   │    │ 000000000009.txt
+    │   │    │ 000000000025.txt
+    │   │    │   ...
+    │   └───train   
+    │   │    │ 000000000139.txt
+    │   │    │ 000000000285.txt
+    │   │    │   ...
+    │   └───val   
+    │        │ 00000000003.txt
+    │        │ 00000002128.txt
+    │        │   ...
 ```
 ## Export datasetu
 
