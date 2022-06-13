@@ -33,7 +33,24 @@ Common Objects in Context (COCO) doslova znamená, že snímky v datovém soubor
 
 COCO poskytuje označování více objektů, anotace segmentačních masek, popisky obrázků, detekci klíčových bodů a panoptické segmentační anotace s celkem 81 kategoriemi, což z něj činí velmi univerzální a víceúčelovou datovou sadu.
 
-Nás ovšem nebudou až tak zajímat tato volně stažitelná [sada dat](https://cocodataset.org/#download). To hlavní čemu je potřeba věnovat pozornost je především hierarchie složek této datové sady popsaná níže.
+Nás ovšem nebudou až tak zajímat tato volně stažitelná [sada dat](https://cocodataset.org/#download). To hlavní čemu je potřeba věnovat pozornost je především hierarchie složek této datové sady popsané níže.
+
+  Project Folder
+  └───the code notebook (.py / .ipynb)
+  │
+  └───COCOdataset2017   
+      └───images
+      │   └───train
+      │   │    │   000000000009.jpg
+      │   │    │   000000000025.jpg
+      │   │    │   ...
+      │   └───val   
+      │        │   000000000139.jpg
+      │        │   000000000285.jpg
+      │        │   ...
+      └───annotations
+          │   instances_train.json
+          │   instances_val.json
 
 ## Export datasetu
 
