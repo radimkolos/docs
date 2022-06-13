@@ -214,3 +214,13 @@ python val.py --img `#` --data `#` --weights `#` --task test
 * Parametry stejné jako při trénování.
 * `--task` určuje kterou množinu chceme vyhodnotit {train, val, test}.
 
+## Export modelu do formátu onnx
+
+Export provedeme tímto příkazem:
+
+```bash
+python export.py --weights `#` --include onnx --img-size `#`
+```
+
+* Je důležité nezapomenou správně nastavit img-size.
+* Tento soubor můžeme načíst pomocí OD, jen je potřeba správně nastavit počet detekovaných tříd v configu, jinak dojde k pádu aplikace!!!
