@@ -48,9 +48,9 @@ V následující sub kapitolách se dozvíte, jak vypadá hierarchie složek, co
 
 Tento soubor, jehož obsah je níže, je konfigurační soubor datasetu, který definuje:
 
-  1. Cestu ke kořenovému adresáři datasetu a relativní cesty k adresářům s obrázky train / val / test (nebo soubory *.txt s cestami k obrázkům)
-  2. Počet tříd nc a 
-  3. Seznam názvů tříd
+  1. Cestu ke kořenovému adresáři datasetu a relativní cesty `path` k adresářům s obrázky `train` / `val` / `test` (nebo soubory *.txt s cestami k obrázkům)
+  2. Počet tříd nc.
+  3. Seznam názvů tříd,
 
 ### Hierarchie složek
 
