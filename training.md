@@ -38,6 +38,20 @@ Nás ovšem nebude až tak zajímat obsah této volně stažitelné [sady dat](h
 
 ## Tvorba datasetu
 
+Modely YOLOv5 musí být natrénované na anotovaných datech, aby se naučily třídy objektů v těchto datech.
+
+V našem případě budeme pracovat s naším [azd-annotationsw](http://192.168.54.118/annotationsw/annotationsw) a pomocí tohoto nástroje dataset vytvoříme.
+
+V následující sub kapitolách se dozvíte, jak vypadá hierarchie složek, co a proč vlastně obsahují.
+
+### Dataset.yaml
+
+Tento soubor, jehož obsah je níže, je konfigurační soubor datasetu, který definuje:
+
+  1. Cestu ke kořenovému adresáři datasetu a relativní cesty k adresářům s obrázky train / val / test (nebo soubory *.txt s cestami k obrázkům)
+  2. Počet tříd nc a 
+  3. Seznam názvů tříd
+
 ### Hierarchie složek
 
 
