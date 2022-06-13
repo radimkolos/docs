@@ -1,6 +1,6 @@
 # Trénování neuronové sítě a její nasazení s použitím Yolo v5
 
-Detekce objektů je úloha umělé inteligence, která se zaměřuje na detekci objektů v obrazech. Yolo V5 je v současnosti jedním z nejlepších dostupných modelů pro detekci objektů. Skvělé na této hluboké neuronové síti je, že ji lze velmi snadno přeškolit na vlastní sadě dat.
+Detekce objektů je úloha umělé inteligence, která se zaměřuje na detekci objektů v obrazech. Yolo V5 je v současnosti jedním z nejlepších dostupných modelů pro detekci objektů. Skvělé na této hluboké neuronové síti je to, že ji lze velmi snadno přeškolit na vlastní sadě dat.
 
 V tomto dokumentu se budu zabývat tím, jak trénovat model Yolo V5 pro detekci objektů. 
 
@@ -27,7 +27,9 @@ Detailnější popis a dokumentace [zde](https://docs.ultralytics.com/).
 
 ### [COCO Dataset](https://cocodataset.org/#home)
 
-COCO je rozsáhlý dataset objektových detekcí, segmentací a popisů objektů.
+COCO (Common Objects in Context) je jednou z nejoblíbenějších sad obrazových dat s aplikacemi, jako je detekce objektů, segmentace a tvorba popisků.
+
+Common Objects in Context (COCO) doslova znamená, že snímky v datovém souboru jsou každodenní objekty zachycené z každodenních scén. To dodává objektům zachyceným ve scénách určitý "kontext".
 
 ## Export datasetu
 
