@@ -3,13 +3,18 @@
 ## TOC
 
 <!--ts-->
-   * [Základní pojmy](#základní-pojmy)
-   * [Export datasetu](#export-datasetu)
+  * [Základní pojmy](#základní-pojmy)
+    * [Yolo v5](#Yolo-v5)
+  * [Export datasetu](#export-datasetu)
 <!--te-->
 
 ## Základní pojmy
 
-[Yolo v5](https://github.com/ultralytics/yolov5) - je množina předtrénvaných modelů na datasetech COCO. YOLO, což je zkratka pro "You only look once", je algoritmus pro detekci objektů, který rozděluje obrázky do mřížkového systému. Každá buňka v mřížce je zodpovědná za detekci objektů uvnitř sebe.
+### [Yolo v5](https://github.com/ultralytics/yolov5)
+
+Je množina předtrénvaných modelů na datasetech COCO.
+
+YOLO, což je zkratka pro "You only look once", je algoritmus pro detekci objektů, který rozděluje obrázky do mřížkového systému. Každá buňka v mřížce je zodpovědná za detekci objektů uvnitř sebe.
 
 YOLO je jedním z nejznámějších algoritmů detekce objektů díky své rychlosti a přesnosti.
 
