@@ -34,7 +34,7 @@ Common Objects in Context (COCO) doslova znamená, že snímky v datovém soubor
 
 COCO poskytuje označování více objektů, anotace segmentačních masek, popisky obrázků, detekci klíčových bodů a panoptické segmentační anotace s celkem 81 kategoriemi, což z něj činí velmi univerzální a víceúčelovou datovou sadu.
 
-Nás ovšem nebudou až tak zajímat tato volně stažitelná [sada dat](https://cocodataset.org/#download). To hlavní čemu je potřeba věnovat pozornost je především hierarchie složek popsané v kapitole [Tvorba datasetu](#tvorba-datasetu).
+Nás ovšem nebude až tak zajímat obsah této volně stažitelné [sady dat](https://cocodataset.org/#download), protože si vytvoříme svoji vlastní v kapitole [Hierarchie složek](#hierarchie-složek). Převezmeme tudíž pouze hierarchii složek této datové sady.
 
 ## Tvorba datasetu
 
