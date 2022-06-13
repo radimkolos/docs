@@ -55,13 +55,35 @@ Tento soubor, jehož obsah je níže, je konfigurační soubor datasetu, který 
 ```yaml
 # Dataset in YoloV5 format created by AZD Annotation software ©
 
-path: ../dataset/   # dataset root dir
-train: images/train   # train images
-val: images/val       # validation images
-test: images/test     # test images
+path: ../dataset/         # dataset root dir
+train: images/train       # train images
+val: images/val           # validation images
+test: images/test         # test images
 
 nc: 2
 names: [ 'HUMN', 'SIGN' ] # classes names
+
+```
+
+### Anotovaná data
+
+Ke každému z obrázků v sadě dat pařtří jeden soubor `*.txt` obsahující anotace.
+
+Specifikace jsou následující:
+
+* Jeden řádek znamená jeden anotovaný objekt
+* Každý řádek je definován jako TŘÍDA X_STŘED Y_STŘED VÝŠKA ŠÍŘKA
+* Souřadnice boxu musí být v normalizovaném formátu XYWH (od 0 - 1)
+* Čísla tříd jsou indexována od nuly
+
+Například takto:
+
+```
+0 0.1734375 0.6342593 0.033072915 0.1162037
+0 0.19947916 0.6435185 0.018229166 0.125
+0 0.2140625 0.6449074 0.0140625 0.10601852
+0 0.24895833 0.6467593 0.02734375 0.10185185
+0 0.32135418 0.6018519 0.021354167 0.09537037
 
 ```
 
