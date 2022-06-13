@@ -11,8 +11,8 @@ V tomto dokumentu se budu zabývat tím, jak trénovat model Yolo V5 pro detekci
     * [Yolo v5](#yolo-v5)
     * [COCO Dataset](#coco-dataset)
   * [Tvorba datasetu](#tvorba-datasetu)
-    * [Dataset.yaml](#dataset.yaml)
-    * [Anotovaná data (labels)](#anotovaná-data-(labels))
+    * [Dataset.yaml](#datasetyaml)
+    * [Anotovaná data (labels)](#anotovaná-data-labels)
     * [Hierarchie složek](#hierarchie-složek)
 <!--te-->
 
