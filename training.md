@@ -2,7 +2,7 @@
 
 Detekce objektů je úloha umělé inteligence, která se zaměřuje na detekci objektů v obrazech. Yolo V5 je v současnosti jedním z nejlepších dostupných modelů pro detekci objektů. Skvělé na této hluboké neuronové síti je to, že ji lze velmi snadno přeškolit na vlastní sadě dat.
 
-V tomto dokumentu se budu zabývat tím, jak trénovat model Yolo V5 pro detekci objektů. 
+V tomto dokumentu se budu zabývat tím, jak natrénovat model Yolo V5 pro detekci objektů. 
 
 ## TOC
 
@@ -14,6 +14,7 @@ V tomto dokumentu se budu zabývat tím, jak trénovat model Yolo V5 pro detekci
     * [Dataset.yaml](#datasetyaml)
     * [Anotovaná data (labels)](#anotovaná-data-labels)
     * [Hierarchie složek](#hierarchie-složek)
+  * [Výběr modelu](#výběr-modelu)
 <!--te-->
 
 ## Základní pojmy
@@ -129,3 +130,8 @@ Project Folder
     │        │ 00000002128.txt
     │        │   ...
 ```
+
+## Výběr modelu
+
+Vyberte předtrénovaný model, na jehož základě začnete trénovat. Je lepší vybrat síť, která je již předtrénovaná na něčem jiném, než trénovat svoji vlastní síť úplně od začátku. Yolo v5 nabízí tyto předtrénované sítě, jejichž srovnání se dá dohledat [zde](https://github.com/ultralytics/yolov5#pretrained-checkpoints).
+
