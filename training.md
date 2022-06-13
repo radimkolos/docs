@@ -162,24 +162,25 @@ pip install -r requirements.txt
 
 ### Export datasetu z anotačního SW
 
-1. V Annotation SW si vyfiltrovat požadovaná data zvolením správného *Annotation type*. Pozor, cokoli odfiltruji, nemusí být ve výsledném datasetu, například pokud si vyfiltruji pouze testovací data, nebude v datasetu trénovací množina.
+V Annotation SW si vyfiltrovat požadovaná data zvolením správného *Annotation type*. Pozor, cokoli odfiltruji, nemusí být ve výsledném datasetu, například pokud si vyfiltruji pouze testovací data, nebude v datasetu trénovací množina.
 
-2. V liště ASW: *File->Settings* nastavit export configuration, především *rozlišení exportovaných snímků*. Delší strana, kratší se dopočítá automaticky podle aspect ratio.
+V liště ASW: *File->Settings* nastavit export configuration, především *rozlišení exportovaných snímků*. Delší strana, kratší se dopočítá automaticky podle aspect ratio.
 
-3. *File->Export to dataset*, zvolit umístění a exportovat. Export zabere nějaký čas a aplikace při něm rádoby zamrzne. Postup exportu lze vidět pouze při spuštění v terminálu nebo nahlédnutím do složek datasetu. Po dokončení se zobrazí zpráva o úspěšnosti operace.
+*File->Export to dataset*, zvolit umístění a exportovat. Export zabere nějaký čas a aplikace při něm rádoby zamrzne. Postup exportu lze vidět pouze při spuštění v terminálu nebo nahlédnutím do složek datasetu. Po dokončení se zobrazí zpráva o úspěšnosti operace.
 
-4. Na zvoleném umístění najdete složku `/dataset` obsahující obrázky a anotace ve formátu YOLO.
-  4.1 Snímky s nastaveným "Is testing->true" jsou vždy v `/test` množině a slouží pro finální ohodnocení modelu.
-  4.2 Ostatní snímky "Is Testing->false" jsou náhodně rozděleny do `/train` a `/val` množin v předem daném poměru (15 %) a slouží pro trénování a úpravu hyperparametrů trénování modelu.
-  4.3 Soubor *files_mapping.txt* obsahuje mapování vygenrovaným názvů souborů na názvy originální (pro případ potřeby dohledání originálního snímku v databázi).
+Na zvoleném umístění najdete složku `/dataset` obsahující obrázky a anotace ve formátu YOLO.
 
-5. Export v této chvíli *nedokáže zohlednit žádné další nastavené vlastnosti objektů* (např. stavy návěstidel apod.), jelikož není zřejmé jak by s němi měl naložit. To je proto ponecháno k rozřešení dalším generacím.
+  * Snímky s nastaveným "Is testing->true" jsou vždy v `/test` množině a slouží pro finální ohodnocení modelu.
+  * Ostatní snímky "Is Testing->false" jsou náhodně rozděleny do `/train` a `/val` množin v předem daném poměru (15 %) a slouží pro trénování a úpravu hyperparametrů trénování modelu.
+  * Soubor *files_mapping.txt* obsahuje mapování vygenrovaným názvů souborů na názvy originální (pro případ potřeby dohledání originálního snímku v databázi).
+
+Export v této chvíli *nedokáže zohlednit žádné další nastavené vlastnosti objektů* (např. stavy návěstidel apod.), jelikož není zřejmé jak by s němi měl naložit. To je proto ponecháno k rozřešení dalším generacím.
 
 ### Úprava cest datasetu
 
-* `dataset_#.yaml` přejmenovat podle potřeb a umístit do složky `/yolov5/data/dataset_#.yaml`
-* Zbytek umístit do složky `/yolov5/../Datasets/dataset_#`
-* V `dataset.yaml` upravit cestu `path` k datům na `../Datasets/dataset_#`
+1. `dataset_#.yaml` přejmenovat podle potřeb a umístit do složky `/yolov5/data/dataset_#.yaml`
+2. Zbytek umístit do složky `/yolov5/../Datasets/dataset_#`
+3. V `dataset.yaml` upravit cestu `path` k datům na `../Datasets/dataset_#`
 
 ### Trénování modelu
 
