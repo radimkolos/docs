@@ -224,5 +224,5 @@ Export provedeme tímto příkazem:
 python export.py --weights `#` --include onnx --img-size `#`
 ```
 
-* Je důležité nezapomenou správně nastavit img-size.
+* Je důležité nezapomenou správně nastavit `--img-size`
 * Tento soubor můžeme načíst pomocí OD, jen je potřeba správně nastavit počet detekovaných tříd v configu, jinak dojde k pádu aplikace!!!
