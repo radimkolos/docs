@@ -11,6 +11,8 @@ V tomto dokumentu se budu zabývat tím, jak trénovat model Yolo V5 pro detekci
     * [Yolo v5](#yolo-v5)
     * [COCO Dataset](#coco-dataset)
   * [Tvorba datasetu](#tvorba-datasetu)
+    * [Dataset.yaml](#dataset.yaml)
+    * [Anotovaná data (labels)](#anotovaná-data-(labels))
     * [Hierarchie složek](#hierarchie-složek)
 <!--te-->
 
@@ -65,7 +67,7 @@ names: [ 'HUMN', 'SIGN' ] # classes names
 
 ```
 
-### Anotovaná data
+### Anotovaná data (labels)
 
 Ke každému z obrázků v sadě dat patří jeden soubor `*.txt` obsahující anotace.
 
@@ -95,8 +97,7 @@ YOLOv5 předpokládá, že adresář `/dataset_1` je uvnitř adresáře `/datase
 ../datasets/coco128/labels/im0.txt  # label
 ```
 
-Obrázky `*.jpg` a anotace `*.txt` by měly být uspořádány do složek naśledujím způsobem níže.
-
+Obrázky `*.jpg` a anotace `*.txt` by měly být uspořádány do složek naśledujím způsobem.
 
 ```
 Project Folder
