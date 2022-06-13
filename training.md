@@ -199,6 +199,18 @@ $ python train.py --img `#` --batch `#` --epochs `#` --data `#` --weights `#`
 * `--epochs` je počet iterací trénovacího algoritmu (např. 100)
 * `--weights` předtrénovaný model (např. yolov5s.pt) nebo techat tento argument prázdný pro náhodnou inicializaci
 
-Výsledný natrénovaný model/y dohledáte v naklnovaném repozitáři v adresáři `yolov5/runs/train/expX/weight/`. 
+Výsledný natrénovaný model/y dohledáte v adresáři `yolov5/runs/train/expX/weight/`.
 
 Adresář bude obsahovat dvě natrénované sítě a to tu nejlepší natrénovanou `best.pt` a poslední `last.pt` z poslední epochy.
+
+## Test natrénovaného modelu
+
+Vyhodnocení modelu na testovací množině můžeme provést následovně:
+
+```bash
+python val.py --img `#` --data `#` --weights `#` --task test
+```
+
+* Parametry stejné jako při trénování.
+* `--task` určuje kterou množinu chceme vyhodnotit {train, val, test}.
+
