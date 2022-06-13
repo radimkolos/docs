@@ -21,7 +21,7 @@ V tomto dokumentu se budu zabývat tím, jak natrénovat model Yolo V5 pro detek
     * [Úprava cest datasetu](#úprava-cest-datasetu)
     * [Trénování modelu](#trénování-modelu)
   * [Test natrénovaného modelu](#test-natrénovaného-modelu)
-  * [Export modelu do formátu [ONNX](https://onnx.ai/)](#export-modelu-do-formátu-onnx)
+  * [Export modelu do formátu ONNX](#export-modelu-do-formátu-onnx)
 <!--te-->
 
 ## Základní pojmy
