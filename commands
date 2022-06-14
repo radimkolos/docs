@@ -1,0 +1,3 @@
+rofi -show drun -theme ~/.config/rofi/argonaut.rasi -font "JetBrains Mono Medium 9"
+setxkbmap -layout us
+setxkbmap -layout cz

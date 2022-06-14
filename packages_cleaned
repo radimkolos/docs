@@ -1,0 +1,5 @@
+# Pacman
+alacritty awesome-terminal-fonts cmake doxygen easyeffects efibootmgr ffmpeg file-roller fmt galculator gdb gpick grub grpc gvfs htop ksnip lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings man-db meld mousepad mpv mupdf net-tools network-manager-applet networkmanager nlohmann-json nomacs ntfs-3g nvidia nvidia-settings openssh os-prober pacman-contrib papirus-icon-theme pavucontrol pipewire pipewire-alsa pipewire-media-session pipewire-pulse playerctl polkit polkit-gnome protobuf pugixml qt5-base qt5ct qtcreator rofi sfml tbb thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman ttf-roboto udiskie valgrind vim vlc wireshark-cli wireshark-qt xdg-utils xdotool zsh zsh-syntax-highlighting zsh-theme-powerlevel10k git cifs-utils
+
+# YAY
+visual-studio-code-bin teamviewer ruby-colorls oh-my-zsh-git mugshot mocu-xcursor imagewriter google-chrome downgrade

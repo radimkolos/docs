@@ -1,0 +1,4 @@
+# qt5ct - The application is not configured correctly.
+# paste line below to /etc/environment.
+export QT_QPA_PLATFORMTHEME=qt5ct
+
